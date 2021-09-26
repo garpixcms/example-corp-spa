@@ -4,13 +4,15 @@ import ContactPage from './Contact';
 import ContentPage from './Content';
 import SearchPage from './Search';
 import ErrorPage from "./Error";
+import PostListPage from "./PostList";
 
 const PAGE_TYPES = {
   'HomePage': Home,
   'ContactPage': ContactPage,
   'Page': ContentPage,
   'SearchPage': SearchPage,
-  'PostListPage': ContentPage,
+  'PostListPage': PostListPage,
+  'PostPage': ContentPage,
 };
 
 const Combine = props => {

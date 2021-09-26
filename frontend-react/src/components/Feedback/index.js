@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import cn from 'classnames';
 import * as Yup from 'yup';
+import api from '../../api';
 
 
 const Feedback = () => {
@@ -11,6 +12,8 @@ const Feedback = () => {
     },
     onSubmit: values => {
       console.log(JSON.stringify(values, null, 2));
+      api.sendFeedback(values)
+      alert('Отправлено')
     },
     validationSchema: Yup.object({
       comment: Yup.string().required('Обязательное поле'),

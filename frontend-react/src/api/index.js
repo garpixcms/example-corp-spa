@@ -20,6 +20,15 @@ class Api extends BaseApi {
     console.log(data, 'data')
     return { pageType: data.page_model, page: data.init_state };
   };
+  sendFeedback = async ({email, comment}) => {
+    const res = await this.post(
+      `/feedback/`,
+      {email, comment}
+    );
+    return {
+      'status': true
+    }
+  }
 }
 
 const MAIN_URL = process.env.REACT_APP_API_URL;
