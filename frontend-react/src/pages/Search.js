@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Layout from "../views/Layout";
 import api from '../api';
+import {Link} from "react-router-dom";
 
 const SearchPage = (props) => {
     const {object, paginated_object_list} = props;
@@ -39,7 +40,7 @@ const SearchPage = (props) => {
             {paginatedObjectList.map((item) => {
                 return (
                     <div key={item.id}>
-                        <a href={item.get_absolute_url}>{item.title}</a>
+                        <Link to={item.get_absolute_url}>{item.title}</Link>
                     </div>
                 )
             })}

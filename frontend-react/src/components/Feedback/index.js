@@ -10,10 +10,11 @@ const Feedback = () => {
       email: '',
       comment: '',
     },
-    onSubmit: values => {
+    onSubmit: (values) => {
       console.log(JSON.stringify(values, null, 2));
       api.sendFeedback(values)
       alert('Отправлено')
+      formik.resetForm();
     },
     validationSchema: Yup.object({
       comment: Yup.string().required('Обязательное поле'),

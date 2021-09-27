@@ -1,5 +1,6 @@
 import Layout from "../views/Layout";
 import Content from "../views/Content";
+import {Link} from "react-router-dom";
 
 const PostListPage = (props) => {
   const { object, paginated_object_list } = props;
@@ -9,7 +10,7 @@ const PostListPage = (props) => {
         {paginated_object_list.map((item) => {
             return (
               <div key={item.id}>
-                  <a href={item.get_absolute_url}>{item.title}</a>
+                  <Link to={item.get_absolute_url}>{item.title}</Link>
               </div>
             )
           })}
