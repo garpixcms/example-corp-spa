@@ -2,6 +2,7 @@ import Layout from "../views/Layout";
 import Content from "../views/Content";
 import Feedback from "../components/Feedback";
 import LoginWithVK from "../components/LoginWithVK";
+import LoginWithFB from "../components/LoginWithFB";
 
 const ContactPage = (props) => {
   const { object } = props;
@@ -18,6 +19,7 @@ const ContactPage = (props) => {
         <div>
             <h2>Войти через соцсети</h2>
             <LoginWithVK />
+            <LoginWithFB />
         </div>
     </Layout>
   )

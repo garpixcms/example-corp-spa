@@ -6,4 +6,5 @@ router = routers.SimpleRouter()
 router.register(r'feedback', CreateFeedbackViewSet)
 urlpatterns = [
     path('api/', include((router.urls, 'contacts'))),
+    path('api/social-auth/', include('rest_framework_social_oauth2.urls')),
 ] + urlpatterns  # noqa

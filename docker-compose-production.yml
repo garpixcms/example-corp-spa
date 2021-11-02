@@ -10,9 +10,16 @@ services:
     volumes:
      - ./nginx.conf:/etc/nginx/nginx.conf
      - ./public:/code/public
+     - ./frontend-react/build:/frontend
     environment:
       - VIRTUAL_HOST=example.cms.garpix.com
       - LETSENCRYPT_HOST=example.cms.garpix.com
+
+  node:
+    image: node:14
+    command: /frontend/build.sh
+    volumes:
+      - ./frontend-react:/frontend
 
   web:
     build: .
