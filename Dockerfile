@@ -8,11 +8,13 @@ RUN mkdir -p /code && \
     mkdir -p /code/public/static && \
     mkdir -p /code/public/media
 
-COPY requirements.txt /code/
-
 WORKDIR /code
 
-RUN pip install -r requirements.txt
+RUN pip3 install pipenv
+
+COPY Pipfile Pipfile.lock /code/
+
+RUN pipenv install --system
 
 COPY backend /code/backend/
 COPY frontend /code/frontend/
