@@ -1,6 +1,7 @@
 import Layout from "../views/Layout";
 import Content from "../views/Content";
 import Feedback from "../components/Feedback";
+import LoginWithVK from "../components/LoginWithVK";
 
 const ContactPage = (props) => {
   const { object } = props;
@@ -14,6 +15,10 @@ const ContactPage = (props) => {
       ) : null}
       <Content data={object.content} />
       <Feedback />
+        <div>
+            <h2>Войти через соцсети</h2>
+            <LoginWithVK />
+        </div>
     </Layout>
   )
 }

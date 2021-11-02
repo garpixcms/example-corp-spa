@@ -9282,6 +9282,11 @@ react-slick@^0.28.1:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
+react-vk-login-button@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-vk-login-button/-/react-vk-login-button-1.1.0.tgz#d810b397d5447a14f17f988760be52bfeb3b03f1"
+  integrity sha512-qiUKM2Gi+RA5cqfkSujP0aobVS6t4TcF2xcQQIn7CvGzwWteIbHEnvMYvRokivPiW07chxVDEEqB8H/zWC9L2A==
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
