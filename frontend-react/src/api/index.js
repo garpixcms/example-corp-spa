@@ -32,7 +32,7 @@ class Api extends BaseApi {
 
     convertTokenVk = async ({vkToken}) => {
         const res = await this.post(
-            `/api/social-auth/convert-token/`,
+            `/social-auth/convert-token/`,
             {
                 grant_type: 'convert_token',
                 client_id: 'XZuxoKGZ2VdcKAGhGtYAlCJhF0iFxWVGSG1ISEXs',
@@ -49,7 +49,7 @@ class Api extends BaseApi {
 
     convertTokenFacebook = async ({token}) => {
         const res = await this.post(
-            `/api/social-auth/convert-token/`,
+            `/social-auth/convert-token/`,
             {
                 grant_type: 'convert_token',
                 client_id: 'iAtAnJYaLYVCr5jJdTN1f0m4YDTBPGvRqx4C5UXC',
