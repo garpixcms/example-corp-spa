@@ -63,6 +63,23 @@ class Api extends BaseApi {
             'status': true
         }
     }
+
+    convertTokenGoogle = async ({token}) => {
+        const res = await this.post(
+            `/social-auth/convert-token/`,
+            {
+                grant_type: 'convert_token',
+                client_id: 'iAtAnJYaLYVCr5jJdTN1f0m4YDTBPGvRqx4C5UXC',
+                client_secret: 'eKaXLML5GbG0zipti1VZnUMdStHjYsTdTV1wMGqqQa8bLqZNeiWJGuF0sHjdBsUv3n6Fs9Dk9np67JDQtJiOfyrezGE73mqc2h69NpjurVQUhryUWG0eWl6kIWYfPnI4',
+                backend: 'google-oauth2',
+                token: token,
+            }
+        );
+        console.log('res', res)
+        return {
+            'status': true
+        }
+    }
 }
 
 const MAIN_URL = process.env.REACT_APP_API_URL;
