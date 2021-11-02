@@ -1,10 +1,12 @@
 import React from "react";
 import SocialButton from "../SocialButton";
+import api from "../../api";
 
 export default class LoginWithFB extends React.Component {
 
-    handleSocialLogin = (user) => {
+    handleSocialLogin = async (user) => {
         console.log(user);
+        await api.convertTokenFacebook({token: user._token.accessToken})
     };
 
     handleSocialLoginFailure = (err) => {
