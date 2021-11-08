@@ -4,10 +4,10 @@ import api from "../../api";
 
 export default class LoginWithAppleId extends React.Component {
 
-    // handleSocialLogin = async (user) => {
-    //     console.log(user);
-    //     await api.convertTokenFacebook({token: user._token.accessToken})
-    // };
+    handleSocialLogin = async (data) => {
+        console.log(data);
+        await api.convertTokenApple({token: data.authorization.code})
+    };
     //
     // handleSocialLoginFailure = (err) => {
     //     console.error(err);
@@ -35,7 +35,7 @@ export default class LoginWithAppleId extends React.Component {
                     /** Checkout README.md for further customization props. */
                     /** Spread rest props if needed */
                     /** Called upon signin success in case authOptions.usePopup = true -- which means auth is handled client side */
-                    onSuccess={(response) => console.log(response)} // default = undefined
+                    onSuccess={this.handleSocialLogin} // default = undefined
                     /** Called upon signin error */
                     onError={(error) => console.error(error)} // default = undefined
                   />
