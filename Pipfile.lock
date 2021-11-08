@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2ad8a8002b790cb6baac24eedc386ee53b9a146678dc81510bd12fcb0e73df3b"
+            "sha256": "654495dfd40e73bc73ef8af9d99e04aa32c4342cdabea80fec54e1c3d0e9c17b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -168,7 +168,7 @@
                 "sha256:a0713dc7a1de3f06bc0df5a9567ad19ead2d3d5689b434768a6145bff77c0667",
                 "sha256:f184f0d851d96b6d29297354ed981b7dd71df7ff500d82fa6d11f0856bee8035"
             ],
-            "markers": "python_full_version >= '3.6.2' and python_full_version < '4.0.0'",
+            "markers": "python_version < '4' and python_full_version >= '3.6.2'",
             "version": "==0.3.0"
         },
         "click-plugins": {
@@ -408,10 +408,10 @@
         },
         "garpix-menu": {
             "hashes": [
-                "sha256:0ea2e5d98e5f49a3aa6eedc4598fe55075398357ec6b809224bf5075b20a8d18",
-                "sha256:7db92977af2012dc68336a7c893e148c75498f89cf6001fa2e582fc52fb893a0"
+                "sha256:6b46887a58841b59b3612a94b2c0597055f74733f335376078a0972632ab4ad6",
+                "sha256:a2dce798a28f1ba011479fa1cc3ca06b958de04ce2071e905e1071ad91b53326"
             ],
-            "version": "==1.6.1"
+            "version": "==1.6.2"
         },
         "garpix-notify": {
             "hashes": [
@@ -450,11 +450,11 @@
         },
         "garpixcms": {
             "hashes": [
-                "sha256:19c1f90e1e2a2fc9d098eda5ea7414a1e9a3bd32b0f49e8f788355e69d54136a",
-                "sha256:daefd6fd313d2298c59900f8e26380fb9efede6aec0995a0de852ebd100b2df0"
+                "sha256:8116ada794e2a62973d70df8d0ed01e3461657b613e28679c49b5780a093b904",
+                "sha256:c561bbcada1683d9391f6d78cdb249d73574c5df6867bb7e350e557d6ca0dcaa"
             ],
             "index": "pypi",
-            "version": "==2.20.0"
+            "version": "==2.21.0"
         },
         "gitdb": {
             "hashes": [
@@ -1065,7 +1065,7 @@
                 "sha256:4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece",
                 "sha256:c4fdf4019605b6e5423637e01bc9fe4daef873709a7973e195ceba0a62bbc844"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_full_version < '4.0.0'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
             "version": "==1.26.7"
         },
         "uwsgi": {
