@@ -4,6 +4,7 @@ import Feedback from "../components/Feedback";
 import LoginWithVK from "../components/LoginWithVK";
 import LoginWithFB from "../components/LoginWithFB";
 import LoginWithGoogle from "../components/LoginWithGoogle";
+import LoginWithAppleId from "../components/LoginWithAppleId";
 
 const ContactPage = (props) => {
   const { object } = props;
@@ -22,6 +23,7 @@ const ContactPage = (props) => {
             <LoginWithVK />
             <LoginWithFB />
             <LoginWithGoogle />
+            <LoginWithAppleId />
         </div>
     </Layout>
   )

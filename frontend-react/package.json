@@ -11,6 +11,7 @@
     "classnames": "^2.3.1",
     "formik": "^2.2.9",
     "react": "^17.0.2",
+    "react-apple-signin-auth": "^1.0.4",
     "react-dom": "^17.0.2",
     "react-fast-compare": "^3.2.0",
     "react-helmet": "^6.1.0",
