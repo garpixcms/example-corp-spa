@@ -28,11 +28,11 @@ MENU_TYPES = {
 
 CHOICE_MENU_TYPES = [(k, v['title']) for k, v in MENU_TYPES.items()]
 
-SOCIAL_AUTH_AUTHENTICATION_BACKENDS = [
+AUTHENTICATION_BACKENDS = [
     'social_core.backends.vk.VKOAuth2',  # for client backend: vk-oauth2
     'social_core.backends.facebook.FacebookOAuth2',  # for client backend: facebook
     'social_core.backends.google.GoogleOAuth2',  # for client backend: google-oauth2
-]
+] + AUTHENTICATION_BACKENDS
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
 SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_SECRET')
