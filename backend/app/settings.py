@@ -32,7 +32,7 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.vk.VKOAuth2',  # for client backend: vk-oauth2
     'social_core.backends.facebook.FacebookOAuth2',  # for client backend: facebook
     'social_core.backends.google.GoogleOAuth2',  # for client backend: google-oauth2
-    'social_core.backends.apple.AppleIdAuth',  # for client backend: appleid
+    'social_core.backends.apple.AppleIdAuth',  # for client backend: apple-id
 ] + AUTHENTICATION_BACKENDS
 
 # social - vk

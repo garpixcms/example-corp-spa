@@ -88,7 +88,7 @@ class Api extends BaseApi {
                 grant_type: 'convert_token',
                 client_id: 'CSDuH8UgHDTFue2GbjZbYJmaRm7VY70QVEFj6A4T',
                 client_secret: 'ic0GJAhwLUF12hvrQugXueplPvvtkkXQS6Yno6fYKiWl7wPE5VNmvvxAWvnBPMIirjtuMds9RQ8oT0U7wSpAqmLrI9fnmX1Ft1NYNW9oybo5ECbAwOZUTEV3b1NZlrRb',
-                backend: 'appleid',
+                backend: 'apple-id',
                 token: token,
             }
         );
