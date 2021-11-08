@@ -6,7 +6,8 @@ export default class LoginWithAppleId extends React.Component {
 
     handleSocialLogin = async (data) => {
         console.log(data);
-        await api.convertTokenApple({token: data.authorization.code})
+        await api.convertTokenApple({token: data.authorization.id_token})
+        // await api.convertTokenApple({token: data.authorization.code})
     };
     //
     // handleSocialLoginFailure = (err) => {
