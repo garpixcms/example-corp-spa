@@ -86,9 +86,9 @@ class Api extends BaseApi {
             `/social-auth/convert-token/`,
             {
                 grant_type: 'convert_token',
-                client_id: 'iAtAnJYaLYVCr5jJdTN1f0m4YDTBPGvRqx4C5UXC',
-                client_secret: 'eKaXLML5GbG0zipti1VZnUMdStHjYsTdTV1wMGqqQa8bLqZNeiWJGuF0sHjdBsUv3n6Fs9Dk9np67JDQtJiOfyrezGE73mqc2h69NpjurVQUhryUWG0eWl6kIWYfPnI4',
-                backend: 'apple',
+                client_id: 'CSDuH8UgHDTFue2GbjZbYJmaRm7VY70QVEFj6A4T',
+                client_secret: 'ic0GJAhwLUF12hvrQugXueplPvvtkkXQS6Yno6fYKiWl7wPE5VNmvvxAWvnBPMIirjtuMds9RQ8oT0U7wSpAqmLrI9fnmX1Ft1NYNW9oybo5ECbAwOZUTEV3b1NZlrRb',
+                backend: 'appleid',
                 token: token,
             }
         );
