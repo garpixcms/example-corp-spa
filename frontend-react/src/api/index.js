@@ -1,14 +1,43 @@
 import BaseApi from "@garpix/base-api";
+import { setCookie, getCookie, removeCookie } from '../utils';
 
 class Api extends BaseApi {
+    constructor(MAIN_URL) {
+        super(MAIN_URL);
+        this.accessToken = null;
+        this.ACCESS_TOKEN_EXPIRES_KEY = 'access_token_expires';
+    }
+
+    clearAuth = () => {
+        removeCookie(this.ACCESS_TOKEN_EXPIRES_KEY);
+    }
+
+    getAccessToken() {
+        if (!this.accessToken) {
+            this.accessToken = getCookie(this.ACCESS_TOKEN_KEY);
+        }
+        return this.accessToken;
+    }
+
+    setAccessToken(accessToken) {
+        this.accessToken = accessToken;
+        setCookie(this.ACCESS_TOKEN_KEY, accessToken)
+    }
+
     getLanguage = () => {
         return "ru";
     };
+
     axiosOverride = axios => {
         const language = this.getLanguage();
         axios.defaults.headers.common["Accept-Language"] = language;
+        const token = this.getAccessToken();
+        if (token) {
+            axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+        }
         return axios;
     };
+
     getPage = async (params, queryParams = {}, axiosParams = {}) => {
         const slug = params[0];
         const res = await this.get(
@@ -17,20 +46,32 @@ class Api extends BaseApi {
             axiosParams
         );
         const data = res.data;
-        console.log(data, 'data')
-        return {pageType: data.page_model, page: data.init_state};
+        return { pageType: data.page_model, page: data.init_state };
     };
-    sendFeedback = async ({email, comment}) => {
+
+    sendFeedback = async ({ email, comment }) => {
         const res = await this.post(
             `/feedback/`,
-            {email, comment}
+            { email, comment }
         );
         return {
             'status': true
         }
     }
 
-    convertTokenVk = async ({vkToken}) => {
+    login = async (params) => {
+        const res = await this.post(`/auth/login/`, params)
+        console.log(res, 'res')
+        this.setAccessToken(res.data.access_token);
+        return res.data
+    }
+
+    currentUser = async () => {
+        const res = await this.get(`/user/current/`)
+        return res.data
+    }
+
+    convertTokenVk = async ({ vkToken }) => {
         const res = await this.post(
             `/social-auth/convert-token/`,
             {
@@ -47,7 +88,7 @@ class Api extends BaseApi {
         }
     }
 
-    convertTokenFacebook = async ({token}) => {
+    convertTokenFacebook = async ({ token }) => {
         const res = await this.post(
             `/social-auth/convert-token/`,
             {
@@ -64,7 +105,7 @@ class Api extends BaseApi {
         }
     }
 
-    convertTokenGoogle = async ({token}) => {
+    convertTokenGoogle = async ({ token }) => {
         const res = await this.post(
             `/social-auth/convert-token/`,
             {
@@ -81,7 +122,7 @@ class Api extends BaseApi {
         }
     }
 
-    convertTokenApple = async ({token}) => {
+    convertTokenApple = async ({ token }) => {
         const res = await this.post(
             `/social-auth/convert-token/`,
             {
