@@ -5,11 +5,13 @@ class Api extends BaseApi {
     constructor(MAIN_URL) {
         super(MAIN_URL);
         this.accessToken = null;
+        this.ACCESS_TOKEN_KEY = 'access_token_key'
         this.ACCESS_TOKEN_EXPIRES_KEY = 'access_token_expires';
     }
 
     clearAuth = () => {
         removeCookie(this.ACCESS_TOKEN_EXPIRES_KEY);
+        removeCookie(this.ACCESS_TOKEN_KEY);
     }
 
     getAccessToken() {
